@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Care Hospital | Services, Doctors & Appointments</title>
+  <style>
+    :root {
+      --primary: #005a9c;
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --border: #595959;
+      --focus: #ff9900;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 8px 16px;
+      z-index: 100;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    a:focus, button:focus, input:focus, select:focus, textarea:focus {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+    header, main, footer {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    article {
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    fieldset {
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 0.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    input, select, textarea {
+      padding: 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .hint {
+      font-size: 0.875rem;
+      color: #4a4a4a;
+      margin-top: 0.25rem;
+    }
+    button {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004477;
+    }
+    .status-banner {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #e6f4ea;
+      border-left: 4px solid #137333;
+      color: #0d5224;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>City Care Hospital</h1>
+    <nav aria-label="Primary Navigation">
+      <ul>
+        <li><a href="#services">Hospital Services</a></li>
+        <li><a href="#doctors">Our Doctors</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Hospital Services</h2>
+      <div class="grid">
+        <article>
+          <h3>Cardiology</h3>
+          <p>Comprehensive heart care, diagnostics, and interventional cardiac procedures.</p>
+        </article>
+        <article>
+          <h3>Orthopedics</h3>
+          <p>Joint replacement, sports injury rehabilitation, and spine care.</p>
+        </article>
+        <article>
+          <h3>Pediatrics</h3>
+          <p>Dedicated outpatient and inpatient medical care for infants, children, and adolescents.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="doctors" aria-labelledby="doctors-heading">
+      <h2 id="doctors-heading">Doctor Directory</h2>
+      <div class="grid">
+        <article>
+          <h3>Dr. Ananya Rao</h3>
+          <p><strong>Department:</strong> Cardiology</p>
+          <p><strong>Qualification:</strong> MD, DM (Cardiology)</p>
+          <p><strong>Availability:</strong> Monday – Friday, 9:00 AM – 2:00 PM</p>
+        </article>
+        <article>
+          <h3>Dr. Vikram Reddy</h3>
+          <p><strong>Department:</strong> Orthopedics</p>
+          <p><strong>Qualification:</strong> MS (Orthopedics)</p>
+          <p><strong>Availability:</strong> Tuesday – Saturday, 10:00 AM – 4:00 PM</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="appointment" aria-labelledby="appointment-heading">
+      <h2 id="appointment-heading">Book a Patient Appointment</h2>
+      <form id="appointment-form" action="/submit-appointment" method="POST">
+        <fieldset>
+          <legend>Patient Information</legend>
+          
+          <div class="form-group">
+            <label for="patient-name">Full Name (Required)</label>
+            <input type="text" id="patient-name" name="patient_name" autocomplete="name" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="patient-email">Email Address (Required)</label>
+            <input type="email" id="patient-email" name="patient_email" autocomplete="email" required aria-required="true" aria-describedby="email-hint">
+            <span id="email-hint" class="hint">We will send your appointment confirmation to this email.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="patient-phone">Phone Number (Required)</label>
+            <input type="tel" id="patient-phone" name="patient_phone" autocomplete="tel" pattern="[0-9]{10}" required aria-required="true" aria-describedby="phone-hint">
+            <span id="phone-hint" class="hint">Enter a 10-digit mobile number without spaces or dashes.</span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Appointment Details</legend>
+
+          <div class="form-group">
+            <label for="department-select">Select Department (Required)</label>
+            <select id="department-select" name="department" required aria-required="true">
+              <option value="">-- Choose a Department --</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="orthopedics">Orthopedics</option>
+              <option value="pediatrics">Pediatrics</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred-date">Preferred Date (Required)</label>
+            <input type="date" id="preferred-date" name="preferred_date" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="preferred-time">Preferred Time Slot (Required)</label>
+            <input type="time" id="preferred-time" name="preferred_time" min="09:00" max="17:00" required aria-required="true" aria-describedby="time-hint">
+            <span id="time-hint" class="hint">Clinic hours are between 09:00 AM and 05:00 PM.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="symptoms">Reason for Visit / Symptoms</label>
+            <textarea id="symptoms" name="symptoms" rows="4" maxlength="500"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit">Confirm Appointment</button>
+
+        <div id="form-status" class="status-banner hidden" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 City Care Hospital. Emergency Helpline: <a href="tel:108">108</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('appointment-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const statusBox = document.getElementById('form-status');
+      const name = document.getElementById('patient-name').value;
+      const date = document.getElementById('preferred-date').value;
+      statusBox.textContent = `Appointment request submitted for ${name} on ${date}. Check your email for confirmation.`;
+      statusBox.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

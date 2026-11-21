@@ -1,0 +1,10 @@
+.flex-container{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+}
+.flex-container div{
+    background-color: beige;
+    padding: 20px;
+    text-align: center;
+
+}

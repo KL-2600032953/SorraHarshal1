@@ -1,0 +1,52 @@
+.container{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    
+    "sidebar content ads"
+    
+    "footer footer footer";
+
+    grid-template-columns: 150px 1fr 130px;
+
+    grid-template-rows: 50px 200px 50px;
+
+    gap: 5px;
+}
+.header{
+    grid-area: header;
+    background-color: rgb(255, 255, 0);
+    text-align: center;
+    padding: 10px;
+}
+   
+.sidebar{
+    grid-area: sidebar;
+    background-color: coral;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-width: 5px;
+    transition: border-width 0.3s ease;
+}
+.content{
+    grid-area: content;
+    background-color: cornflowerblue;
+    text-align: center;
+    padding: 10px;
+
+}
+.footer{
+    grid-area: footer;
+    background-color: rgb(32, 95, 32);
+    text-align: center;
+    padding: 10px;
+
+}
+
+
+#sumbitbtn{
+    transition: all 0.3sec;
+    cursor: pointer;
+
+}

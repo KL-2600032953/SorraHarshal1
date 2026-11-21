@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*navigation bar*/
+.navbar{
+    display:flex;
+    background-color: #000000;
+    height: 125px;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 2px solid #ccc;
+}
+/*logo*/
+.brand-section{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/*N*/
+.logo{
+    color: deepskyblue;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+.brand-name{
+    color: lightskyblue;
+    font-size: 55px;
+    font-family: 'Arail', sans-serif
+}
+/*title section*/
+.title-section{
+    margin-left: 40px;
+}
+
+.title-section h2{
+    color: beige;
+    font-size: 40px;
+}
+.title-section p{
+    color: beige;
+    font-size: 22px;
+}
+/*right section*/
+.right-section{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 30px;
+}
+/*live status*/
+.status{
+    color: #16e9a1;
+    font-size: 20px;
+}
+/*green circle*/
+.status-dot{
+    display: inline-block;
+    background-color: chartreuse;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+
+}
+.dispacth-btn{
+    background-color: black;
+    color: beige;
+    font-size: 20px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+
+}
+
