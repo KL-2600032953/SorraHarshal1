@@ -72,4 +72,28 @@
     cursor: pointer;
 
 }
-
+.page{
+    padding: 35px 5%;
+}
+.page p{
+    color: #d0c3f3
+}
+.kpi-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.kpi-card, .panel{
+    background: rgb(2, 2, 14);
+    border: 1px solid  rgb(38, 38, 135);
+    border-radius: 12px;
+}
+.kpi-card{
+    padding: 22px;
+    transition: 0.3s;
+}
+.kpi-card:hover{
+    border-color: rgb(255, 3, 3);
+    transform: translateY(-3px);
+}

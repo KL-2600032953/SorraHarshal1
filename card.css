@@ -18,3 +18,24 @@ img:hover{
    transform: scale(1.5);
    transition: transform backgroud-color 03.s ease
 }
+#sumbitbtn{
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+}
+#sumbitbtn:hover{
+    background-color: red;
+    transform: scale(1.5);
+    transition: transform background-color 0.3s ease;
+}
+nav a:hover{
+    align-items: center;
+    background: lightblue;
+    padding: 10px;
+}
+.navbar{
+    justify-content: space-around;
+    display: flex;
+    background-color: lightblue;
+    padding: 10px;
+}
