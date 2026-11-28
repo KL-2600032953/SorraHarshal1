@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <h2>Simple Calculator</h2>
+
+            <input type="number" id="a" placeholder="First Number"/><br/><br/>
+
+            <input type="number" id="b" placeholder="First Number"/><br/><br/>
+
+
+            <button onclick="calculate('+')" style="color: blue;">Addition</button>
+            <button onclick="calculate('-')" style="color: red;">Subtraction</button>
+            <button onclick="calculate('*')" style="color: green;">Multiplication</button>
+            <button onclick="calculate('/')" style="color: orange;">Division</button>
+            <h3 id="result"></h3>
+            <script>
+                function calculate(operator) {
+                let a = Number(document.getElementById("a").value) || 0;
+                let b = Number(document.getElementById("b").value) || 0;
+                let result;
+
+                switch (operator) {
+                    case '+':
+                        result = a + b;
+                        break;
+                    case '-':
+                        result = a - b;
+                        break;
+                    case '*':
+                        result = a * b;
+                        break;
+                    case '/':
+                        result = a / b;
+                        break;
+                    default:
+                        result = "Invalid operator";
+                }
+
+                document.getElementById("result").innerHTML = "Result: " + result;
+            }
+           
+            
+        </script>
+
+        </body>
+    </head>
+</html>
